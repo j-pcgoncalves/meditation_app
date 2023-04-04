@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:meditation_app/constants.dart';
 import 'package:meditation_app/widgets/bottom_nav_bar.dart';
+import 'package:meditation_app/widgets/search_bar.dart';
 
 void main() => runApp(const MyApp());
 
@@ -72,6 +73,7 @@ class HomeScreen extends StatelessWidget {
                         .displaySmall
                         .copyWith(fontWeight: FontWeight.w900),
                   ),
+                  const SearchBar(),
                 ],
               ),
             ),
