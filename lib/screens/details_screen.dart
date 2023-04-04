@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:meditation_app/constants.dart';
 import 'package:meditation_app/widgets/bottom_nav_bar.dart';
 import 'package:meditation_app/widgets/search_bar.dart';
@@ -87,7 +88,57 @@ class DetailsScreen extends StatelessWidget {
                           press: () {},
                         ),
                       ],
-                    )
+                    ),
+                    const SizedBox(height: 20),
+                    Text(
+                      'Meditation',
+                      style: Theme.of(context)
+                          .textTheme
+                          .titleLarge
+                          .copyWith(fontWeight: FontWeight.bold),
+                    ),
+                    Container(
+                      margin: const EdgeInsets.symmetric(vertical: 20),
+                      padding: const EdgeInsets.all(10),
+                      height: 90,
+                      decoration: BoxDecoration(
+                        color: Colors.white,
+                        borderRadius: BorderRadius.circular(13),
+                        boxShadow: const [
+                          BoxShadow(
+                            offset: Offset(0, 17),
+                            blurRadius: 23,
+                            spreadRadius: -13,
+                            color: kShadowColor,
+                          ),
+                        ],
+                      ),
+                      child: Row(
+                        children: <Widget>[
+                          SvgPicture.asset(
+                            'assets/icons/Meditation_women_small.svg',
+                          ),
+                          const SizedBox(width: 20),
+                          Expanded(
+                            child: Column(
+                              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: <Widget>[
+                                Text(
+                                  'Basic 2',
+                                  style: Theme.of(context).textTheme.titleLarge,
+                                ),
+                                const Text('Start to deepen your practice'),
+                              ],
+                            ),
+                          ),
+                          Padding(
+                            padding: const EdgeInsets.all(10),
+                            child: SvgPicture.asset('assets/icons/Lock.svg'),
+                          ),
+                        ],
+                      ),
+                    ),
                   ],
                 ),
               ),
