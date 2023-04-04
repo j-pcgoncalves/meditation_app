@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:meditation_app/constants.dart';
 import 'package:meditation_app/widgets/bottom_nav_bar.dart';
+import 'package:meditation_app/widgets/category_card.dart';
 import 'package:meditation_app/widgets/search_bar.dart';
 
 void main() => runApp(const MyApp());
@@ -74,6 +75,43 @@ class HomeScreen extends StatelessWidget {
                         .copyWith(fontWeight: FontWeight.w900),
                   ),
                   const SearchBar(),
+                  Expanded(
+                    child: GridView.count(
+                      crossAxisCount: 2,
+                      childAspectRatio: .85,
+                      crossAxisSpacing: 20,
+                      mainAxisSpacing: 20,
+                      children: <Widget>[
+                        CategoryCard(
+                          title: 'Diet Recommendation',
+                          svgScr: 'assets/icons/Hamburger.svg',
+                          press: () {},
+                        ),
+                        CategoryCard(
+                          title: 'Kegel Exercises',
+                          svgScr: 'assets/icons/Excrecises.svg',
+                          press: () {},
+                        ),
+                        CategoryCard(
+                          title: 'Meditation',
+                          svgScr: 'assets/icons/Meditation.svg',
+                          press: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) {},
+                              ),
+                            );
+                          },
+                        ),
+                        CategoryCard(
+                          title: 'Yoga',
+                          svgScr: 'assets/icons/yoga.svg',
+                          press: () {},
+                        ),
+                      ],
+                    ),
+                  ),
                 ],
               ),
             ),
