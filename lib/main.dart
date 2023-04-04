@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:meditation_app/constants.dart';
+import 'package:meditation_app/screens/details_screen.dart';
 import 'package:meditation_app/widgets/bottom_nav_bar.dart';
 import 'package:meditation_app/widgets/category_card.dart';
 import 'package:meditation_app/widgets/search_bar.dart';
@@ -99,7 +100,9 @@ class HomeScreen extends StatelessWidget {
                             Navigator.push(
                               context,
                               MaterialPageRoute(
-                                builder: (context) {},
+                                builder: (context) {
+                                  return const DetailsScreen();
+                                },
                               ),
                             );
                           },
